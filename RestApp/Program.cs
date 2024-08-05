@@ -19,6 +19,7 @@ ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
 
 builder.Services.AddSingleton<IRestClient, RestClient>();
 builder.Services.AddTransient<RestAppClientController>();
+builder.Services.Configure<RetrySettings>(builder.Configuration.GetSection("RetrySettings"));
 
 var app = builder.Build();
 
