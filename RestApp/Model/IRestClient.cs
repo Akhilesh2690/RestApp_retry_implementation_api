@@ -10,6 +10,6 @@
 
         public Task<TModel> Delete<TModel>(int id);
 
-        public Task<String> Get(string url);
+        public Task<String> GetDataFromUrl(string url);
     }
 }

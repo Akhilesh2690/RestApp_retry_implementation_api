@@ -34,7 +34,7 @@ namespace RestApp.Controllers
             try
             {
                 var result = await RetryHelper.ExecuteWithRetryAsync<string>(
-                    async () => await _restClient.Get(url),
+                    async () => await _restClient.GetDataFromUrl(url),
                     maxRetries: _retrySettings.MaxRetries,
                     retryDelay: TimeSpan.FromSeconds(_retrySettings.RetryDelaySeconds),
                     exceptionTypeToHandle: typeof(WebException),

@@ -11,12 +11,7 @@ namespace RestApp.Repository
             _httpClient = new HttpClient();
         }
 
-        public Task<TModel> Delete<TModel>(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<string> Get(string url)
+        public async Task<string> GetDataFromUrl(string url)
         {
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -34,6 +29,11 @@ namespace RestApp.Repository
         }
 
         public Task<TModel> Put<TModel>(string url, TModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TModel> Delete<TModel>(int id)
         {
             throw new NotImplementedException();
         }
